@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get spelling</title>
+</head>
+<body>
+    <div>
+    <input type="number" width="10">
+    <button id="find">Get in words</button>
+    <h2></h2>
+    </div>
+    <script type="text/javascript">
+    var x=998;
 const ones=["one","two","three","four","five","six","seven","eight","nine","ten"];
 const tens=["twenty","thirty","fourty","fifty","sixty","seventy","eighty","ninety"];
 const eleven=["eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","ninteen"];
@@ -77,10 +92,10 @@ const getThousends=(n)=>{
 const getSpelling=(a)=>{
     return getThousends(a);
 }
-
-
-setInterval(()=>{
-    const n=getNext();
-    const sp=n+" - "+getSpelling(n);
-    console.log(sp);
-   },1000);
+document.getElementsByTagName("button")[0].addEventListener("click",(event)=>{
+    var input = parseInt(document.getElementsByTagName("input")[0].value);
+    document.getElementsByTagName("h2")[0].innerHTML = getSpelling(input);
+})
+</script>
+</body>
+</html>
